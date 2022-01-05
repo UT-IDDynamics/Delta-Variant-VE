@@ -65,6 +65,25 @@ ARV_avg<- ARV #rollmean(vaccine_data$Breakthroughs..Vaccinated.Cases., 14, na.pa
 vaccine_data$VE_avg <- ((ARU_avg-ARV_avg)/ARU_avg)*100
 
 
+# Breakthrough cases ------------------------------------------------------
+
+## Calculate the actual % of cases that are vaccine breakthroughs PCV
+vaccine_data$Frac_Breakthrough <- vaccine_data$Breakthrough.Cases/(vaccine_data$Breakthrough.Cases + 
+                                                                                  vaccine_data$Unvaccinated.Cases)*100
+
+## Make theoretical curves for the plots according to PCV = PPV - (PPV*VE) / 1- PPV*VE 
+VE_seq <-c(70, 75, 80, 85, 90, 95)
+
+for(i in 1:length(VE_seq)){
+  PPV <- seq(0,1, 0.001)
+  assign(paste0("PCV_", VE_seq[i]), (PPV - (PPV*(VE_seq[i]/100)))/(1-PPV*VE_seq[i]/100))
+}
+
+
+## Combine all the theoretical curves into a dataframe
+Expected <- as.data.frame(cbind(PCV_95,PCV_90,PCV_85, PCV_80, PCV_75, PCV_70, PPV))
+
+
 # Estimating VE_delta -----------------------------------------------------
 
 ## VE against Delta Varaint
