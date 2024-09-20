@@ -8,11 +8,10 @@ library(boot)
 
 
 # Load Data ---------------------------------------------------------------
-setwd("~/Downloads/Utah_COVID19_data_Oct15/")
 
 ## Read in the case data + vaccination data
-vaccine_dat<-read.csv("Risk_Daily Case Counts by Vaccination Status_2021-10-15.csv")
-vaccine_pop<-read.csv("Risk_Weekly Case Rates in Vaccinated and Unvaccinated People2021-10-15.csv")
+vaccine_dat<-read.csv("data/Risk_Daily Case Counts by Vaccination Status_2021-11-01.csv")
+vaccine_pop<-read.csv("data/Risk_Weekly Case Rates in Vaccinated and Unvaccinated People2021-11-01.csv")
 
 
 
@@ -23,7 +22,7 @@ vaccine_pop$Case.Date <- lubridate::ymd(vaccine_pop$Week.Date..Sunday.)
 
 
 ## Read in the lineage data
-lineage_data <- read.csv("Trends_Sequencing Results by Week_2021-10-15.csv")
+lineage_data <- read.csv("data/Trends_Sequencing Results by Week_2021-11-01.csv")
 lineage_data<-lineage_data[!(lineage_data$Percentage.of.all.Sequenced.Results.per.Week=="Sample size too small"),]
 lineage_data$Percentage.of.all.Sequenced.Results.per.Week<-as.numeric(as.character(
   lineage_data$Percentage.of.all.Sequenced.Results.per.Week))
