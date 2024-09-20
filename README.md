@@ -7,7 +7,9 @@ This paper is in press at [JAMA Network Open](https://jamanetwork.com/journals/j
 ## Description 
 The spread of VOCs with significantly higher transmissibility (eg, the Delta variant), has raised concerns about ability for vaccines to sustainably control SARS-CoV-2. These concerns are exacerbated by the increasing number of cases reported in fully vaccinated individuals as the Delta variant spreads globally, potentially signaling a decreased vaccine effectiveness for VOCs. To determine the effectiveness of the vaccines deployed in Utah against testing positive to SARS-CoV-2, we estimated the combined daily vaccine effectiveness ($$VE_t$$) using the field evaluation approach in Orenstein et al.[1985](https://pubmed.ncbi.nlm.nih.gov/3879673/). We calculate the VE using data from [Utah](https://coronavirus-dashboard.utah.gov/overview.html). We then extend this method to understand the rate of breakthrough infections in the face of a rapidly changing variant landscape. If we attribute the entire change in vaccine effectiveness to the Delta variant, the estimated vaccine effectiveness against Delta would be 81.2% (95% CI, 80.8%-81.6%).
 
-![](figures/VEFigure.png)
+<div align="center">
+  <img src="figures/VEFigure.png" alt="Figure2" width="1200"/>
+</div>
 
 Figure 1: The 14-day moving mean of the percentage of breakthrough cases against the percentage of the population vaccinated (blue) from January 16 to October 9, 2021, with the theoretical curves for the expected percentage of breakthrough cases with vaccine effectiveness ranging from 80% to 95% (gray
 dashed lines)
